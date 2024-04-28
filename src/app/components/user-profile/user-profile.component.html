@@ -1,0 +1,98 @@
+<!-- <p>This is user profile.</p>
+<p>Name : {{ fullName.toUpperCase() }} </p>
+<p>Age : {{ age }}</p>
+
+<h1>Update Input Value : {{ inputValue }}</h1> -->
+
+<!-- Two way data binding start-->
+
+<!-- <input type="text" (input) = "getInputData($event)" [value] = "inputValue" /> -->
+<!-- <button [disabled]="isButtonDisabled">Click me</button>
+
+<input type="text"  [(ngModel)] = "inputValue" /> -->
+<!-- into a short way -->
+<!-- Two way data binding end -->
+
+<!-- Mobile number -->
+
+<!-- <p appHightlight>{{ mobile | countryCode:'IN' }}</p> -->
+
+<p #myParagraph>{{ mobile | countryCode:'IN' }}</p>
+
+<!-- Users listing code start-->
+  <!-- <div>
+    <table border="1" width="100%" align="center">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Married Status</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        @if(users.length > 0) {
+          @for(user of users;track user?.id) {
+            <tr>
+              <td>{{ user?.id }}</td>
+              <td>{{ user?.name }}</td>
+              <td>{{ user?.age }}</td>
+              <td>{{ user?.isMarried ? 'Yes' : 'No' }}</td>
+              <td>{{ user?.salary }}</td>
+            </tr>
+          }
+        }@else{
+          <tr>
+            <td colspan="5">No Record Found</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div> -->
+
+  <!-- before version 17 -->
+
+  <!-- <hr/>
+
+  <div>
+    <table border="1" width="100%" align="center">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Married Status</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody align="center" *ngFor="let user of users">
+            <tr *ngIf="user.salary > 10000;else elseBlock">
+              <td>{{ user?.id }}</td>
+              <td>{{ user?.name }}</td>
+              <td>{{ user?.age }}</td>
+              <td>{{ user?.isMarried ? 'Yes' : 'No' }}</td>
+              <td>{{ user?.salary }}</td>
+            </tr>
+            <ng-template #elseBlock>
+              <tr>
+                <td>{{ user?.id }}</td>
+                <td>{{ user?.name }}</td>
+                <td>{{ user?.age }}</td>
+                <td>{{ user?.isMarried ? 'Yes' : 'No' }}</td>
+                <td>{{ user?.salary }}</td>
+              </tr>
+            </ng-template>
+      </tbody>
+    </table>
+  </div> -->
+
+<!-- Users listing code end-->
+
+<!-- How to show data parent to child code start-->
+
+<h3>Name : {{ name() | titlecase }} Salary: {{ salary | currency:"INR" }} Married : {{ isMarried ? 'Yes' : 'No'}} </h3>
+
+<!-- How to show data parent to child code end-->
+
+<button type="button" (click)="sendData()">Click Me</button>

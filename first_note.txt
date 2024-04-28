@@ -1,0 +1,67 @@
+What and why Angular?
+
+Angular is a framework for building ui.
+You can create single page application (SPA) which improves user experience .
+You can create resuable component.
+MVC at client side .
+Quicker development & less dependency on third party library (eg : routing , validation, SSR etc inbuilt)
+Angular apps are so fast.
+
+
+----------------------------------------------------------------------------------------------------------------
+        ================ 1st day ======================= 
+         
+URL : https://angular.dev/tools/cli/setup-local#install-the-angular-cli
+
+install angular cli gloable : npm install -g @angular/cli
+check cli version : ng version
+create new project : ng new project_name then cd and go to project.
+start/ run project : npm run start || ng serve --open
+main.ts file is the main file that loads first when angular project start.
+create angular component : ng g c component_name
+print variable values : {{ }} (it is called interpolation)
+property binding : []
+event trigger over input tag , write event name without on keyword and it should be into a parantheses.
+like :     <input type="text" (change) = "updateValue()" /> 
+or 
+
+Two way binding means typescript to html and html to ts . 
+<input type="text"  [(ngModel)] = "inputValue" /> . It is also called banana in the box.
+
+
+Looping a array
+@for(user of users;track user.id) {
+
+}
+
+Decorater : @Input , @Output
+
+pipe are inbuilt function into angular . it applies over variable like : titlecase,uppercase etc
+ {{ name | titlecase }} 
+generate pipe : ng g p pipes/countryCode
+
+Make custom directive : ng g d directiveName
+
+Angular life cycle method :
+constructor : It calls automatically when an instance is created of a class .
+these are the method called automatically when a angular project runs . These are also called life cycle method.
+ngOnChanges : firstly calls constructor and then call this method. ,
+ngOnInit : it calls after ngOnChanges,
+ngOnDestroy: it calls after ngInit method.
+
+template variable : we can use over html element .
+like : <h1 #templateVarialble></h1>
+and then hold it using a Decorater @ViewChild
+
+
+services : when we require a network request , use services
+create a service : ng g s serviceName
+we can manage global state using services into angular.
+we make make signal with the help of service
+
+
+        =============== Standalone component ==============
+A Standalone component is a type of component that doesn't belong to any specific Angular module.
+Less boiler code / configuration.
+Lazy loading component is also possible now.
+------------------------------------------------------------------------------------------------------------------
